@@ -1,0 +1,332 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #0f172a;
+    color: white;
+    min-height: 100vh;
+    padding-top: 100px;
+  }
+
+  .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 3rem;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #0f172a;
+      z-index: 1000; 
+  }
+  
+  .navbar .logo {
+    font-weight: bold;
+    font-size: 29px;
+  }
+  
+  nav a {
+    color: white;
+    margin-right: 1.5rem;
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  .theme-toggle {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    color: white;
+  }
+  
+  .home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  #home {
+    padding-top: 100px; /* isso "empurra" a imagem para baixo */
+  }
+
+  .options-logo {
+    font-size: 25px;
+  }
+
+  .profile-pic {
+    overflow: hidden;
+    border: 4px solid dodgerblue;
+    border-radius: 50%;
+    width: 400px;
+    height: 400px;
+    margin-bottom: 1rem;
+  }
+  
+  .profile-pic img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+  }
+  
+  .intro {
+    color: dodgerblue;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    font-size: 30px;
+  }
+  
+  .name {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  .description {
+    color: dodgerblue;
+    font-size: 35px;
+    border-right: 2px solid dodgerblue;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: monospace;
+  }
+  
+  @keyframes blink {
+    0%, 100% { border-color: transparent; }
+    50% { border-color: #94a3b8; }
+  }
+
+  .spacer {
+  height: 200px;
+  }
+
+  .spacer2 {
+  height: 150px;
+  }  
+
+  .about-text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  .about-text h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-text-content .highlight {
+    color: dodgerblue;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+    color: dodgerblue;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: dodgerblue;
+    color: black;
+    font-weight: bold;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0px 0px 15px dodgerblue;
+  }
+
+  .btn:hover {
+    background: dodgerblue;
+    box-shadow: 0px 0px 20px dodgerblue;
+  }
+
+  .profile-pic2 {
+    overflow: hidden;
+    border: 4px solid dodgerblue;
+    border-radius: 10%;
+    width: 400px;
+    height: 400px;
+    display: flex;
+    gap: 2rem;
+  }
+
+  .profile-pic2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .cursor {
+    display: inline-block;
+    margin-left: 2px;
+    width: 1px;
+    background-color: black;
+    animation: blink 0.7s steps(2, start) infinite;
+  }
+  
+  @keyframes blink {
+    to {
+      visibility: hidden;
+    }
+  }
+
+  html {
+    scroll-padding-top: 100px;
+    scroll-behavior: smooth;
+  }
+
+  .timeline-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 3rem;
+    color: white;
+  }
+  
+  .timeline-column {
+    flex: 1;
+    position: relative;
+  }
+  
+  .timeline-column h2 {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+  }
+  
+  .timeline {
+    position: relative;
+    margin-left: 1rem;
+    border-left: 2px solid dodgerblue;
+    padding-left: 2rem;
+  }
+  
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0.4rem;
+    width: 10px;
+    height: 100%;
+    background: transparent;
+  }
+  
+  .timeline-item {
+    position: relative;
+    background-color: #1e293b;
+    border: 2px solid dodgerblue;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2rem;
+    top: 1.1rem;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 14px solid dodgerblue;
+  }
+  
+  .timeline-date {
+    color: dodgerblue;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  
+  .cursor {
+    animation: blink 1s infinite;
+  }
+  
+  @keyframes blink {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+  }
+
+  #contact {
+    background-color: #2d3543;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+  }
+  
+  #contact h2 {
+    color: dodgerblue;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+  }
+  
+  .contact-container {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    flex-wrap: wrap;
+  }
+  
+  .contact-item {
+    text-align: center;
+  }
+  
+  .contact-item i {
+    font-size: 3em;
+    border: 2px solid dodgerblue;
+    border-radius: 50%;
+    padding: 20px;
+    color: dodgerblue;
+    margin-bottom: 10px;
+  }
+  
+  .contact-item h3 {
+    margin: 10px 0 5px;
+    font-weight: bold;
+  }
+  
+  .contact-item a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .contact-item a:hover {
+    text-decoration: underline;
+  }
+  
+  footer {
+    background-color: #1f242f;
+    color: white;
+    text-align: center;
+    padding: 15px 10px;
+    font-size: 0.9em;
+  }
+
+  :blank {
+    color: white;
+  }
